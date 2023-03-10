@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, setPersistence, inMemoryPersistence } from "firebase/auth"
+import { getAuth, setPersistence, inMemoryPersistence, browserLocalPersistence } from "firebase/auth"
 import { getFirestore } from "firebase/firestore";
 //TODO: add firebaes config
 const firebaseConfig = {
@@ -14,4 +14,4 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig, "CLIENT");
 export const auth = getAuth(app)
 export const db = getFirestore(app); 
-setPersistence(auth, inMemoryPersistence)
+setPersistence(auth, browserLocalPersistence)
